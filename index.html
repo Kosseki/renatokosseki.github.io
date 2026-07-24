@@ -1,9 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Meu Primeiro Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        /* Configurações Gerais e Rolagem Suave */
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Menu de Navegação Fixo no Topo */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #1a1a2e;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #e94560;
+        }
+
+        /* Estilo das Seções */
+        section {
+            padding: 100px 20px 80px 20px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Seção Intro (Destaque) */
+        #intro {
+            background: linear-gradient(135deg, #1f4068, #162447);
+            color: white;
+        }
+        #intro h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        #intro p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        /* Outras Seções */
+        #sobre { background-color: #ffffff; }
+        #projetos { background-color: #f0f0f5; }
+        #contato { 
+            background-color: #1a1a2e; 
+            color: white;
+            min-height: 40vh;
+        }
+
+        /* Estilo de Botões ou Links de Contato */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover { background-color: #ff5774; }
+    </style>
 </head>
 <body>
-    <h1>Olá, Mundo! Meu site está no ar!</h1>
+
+    <!-- Menu que leva o usuário até a seção correta -->
+    <nav>
+        <a href="#intro">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Seção 1: Intro -->
+    <section id="intro">
+        <h1>Olá, eu sou o Renato</h1>
+        <p>Bem-vindo ao meu espaço na internet.</p>
+        <a href="#sobre" class="btn">Conhecer mais</a>
+    </section>
+
+    <!-- Seção 2: Sobre -->
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p style="max-width: 600px; line-height: 1.6;">
+            Aqui você pode escrever um breve resumo sobre a sua jornada, suas habilidades, o que você estuda ou quais são os seus objetivos profissionais.
+        </p>
+    </section>
+
+    <!-- Seção 3: Projetos -->
+    <section id="projetos">
+        <h2>Meus Projetos</h2>
+        <p>Em breve, adicionarei meus principais trabalhos e códigos criados aqui.</p>
+    </section>
+
+    <!-- Seção 4: Contato -->
+    <section id="contato">
+        <h2>Vamos conversar?</h2>
+        <p>Entre em contato comigo através das redes sociais.</p>
+        <p>E-mail: seu-email@exemplo.com</p>
+    </section>
+
 </body>
 </html>
