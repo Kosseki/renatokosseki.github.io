@@ -21,65 +21,29 @@
             color: #333333;
         }
 
-        /* --- Menu Superior Fixo e Suspenso --- */
-        header {
+        /* --- Menu Horizontal Fixo e À Mostra no Topo --- */
+        nav {
             position: fixed;
             top: 0;
-            left: 0;
-            background-color: #0b0b0b;
-            padding: 15px 30px;
-            display: flex;
-            align-items: center;
+            width: 100%;
+            background-color: #0b0b0b; /* Fundo escuro igual ao tema */
+            padding: 18px 0;
+            text-align: center;
             z-index: 1000;
-            border-bottom-right-radius: 4px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-        .menu-container {
-            position: relative;
-            display: inline-block;
-        }
-        .menu-icon {
-            font-size: 22px;
-            color: #ff0055;
-            cursor: pointer;
-            margin-right: 15px;
-            transition: transform 0.3s;
-        }
-        .brand-name {
-            font-size: 20px;
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
             font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-        /* O Menu Suspenso (Dropdown) */
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 40px;
-            left: -30px;
-            background-color: #0b0b0b;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
-            border-bottom-right-radius: 4px;
-            z-index: 1001;
-        }
-        .dropdown-menu a {
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #1a1a1a;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
         }
-        .dropdown-menu a:hover {
-            background-color: #1a1a1a;
-            color: #ff0055;
-        }
-        /* Mostrar o menu ao passar o mouse */
-        .menu-container:hover .dropdown-menu {
-            display: block;
+        nav a:hover {
+            color: #ff0055; /* Magenta ao passar o mouse */
         }
 
         /* --- Botão Flutuante de Voltar ao Topo --- */
@@ -194,6 +158,7 @@
             color: white;
             font-size: 26px;
             text-decoration: none;
+            transition: color 0.3s;
         }
         .hero-footer-icons a:hover { color: #ff0055; }
 
@@ -201,7 +166,7 @@
            SEÇÃO 2: QUEM SOU (SOBRE)
            ========================================================== */
         .container-section {
-            padding: 90px 20px;
+            padding: 110px 20px 90px 20px; /* Aumentado o topo por conta do menu fixo */
             max-width: 1000px;
             margin: 0 auto;
             box-sizing: border-box;
@@ -223,7 +188,7 @@
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            background-color: #ddd; /* Placeholder caso falte foto */
+            background-color: #ddd;
         }
         .about-text {
             max-width: 650px;
@@ -410,13 +375,11 @@
             width: 50%;
             box-sizing: border-box;
         }
-        /* Item na Esquerda */
         .timeline-item.left {
             left: 0;
             padding-right: 40px;
             text-align: right;
         }
-        /* Item na Direita */
         .timeline-item.right {
             left: 50%;
             padding-left: 40px;
@@ -436,38 +399,16 @@
             font-size: 14px;
             z-index: 2;
         }
-        .left .timeline-icon {
-            right: -18px;
-        }
-        .right .timeline-icon {
-            left: -18px;
-        }
-        .timeline-date {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 5px;
-        }
-        .timeline-company {
-            font-size: 18px;
-            font-weight: bold;
-            color: #111;
-            margin: 0 0 5px 0;
-        }
-        .timeline-role {
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-        .timeline-desc {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+        .left .timeline-icon { right: -18px; }
+        .right .timeline-icon { left: -18px; }
+        .timeline-date { font-size: 13px; color: #888; margin-bottom: 5px; }
+        .timeline-company { font-size: 18px; font-weight: bold; color: #111; margin: 0 0 5px 0; }
+        .timeline-role { font-size: 16px; font-weight: 600; color: #333; margin-top: 0; margin-bottom: 15px; }
+        .timeline-desc { color: #666; font-size: 14px; line-height: 1.6; }
 
         /* Responsividade para Telas Menores */
         @media (max-width: 768px) {
+            nav a { margin: 0 8px; font-size: 11px; }
             .grid-skills { grid-template-columns: 1fr; gap: 40px; }
             .about-content { flex-direction: column; align-items: center; text-align: center; }
             .timeline::before { left: 20px; }
@@ -480,26 +421,19 @@
 </head>
 <body>
 
-    <!-- Menu Superior Esquerdo Fixo com Dropdown -->
-    <header>
-        <div class="menu-container">
-            <i class="fas fa-bars menu-icon"></i>
-            <!-- Itens suspensos que aparecem ao passar o mouse -->
-            <div class="dropdown-menu">
-                <a href="#home">Início</a>
-                <a href="#quem-sou">Quem sou</a>
-                <a href="#perfil-skills">Habilidades</a>
-                <a href="#credenciais">Credenciais</a>
-            </div>
-        </div>
-        <a href="#home" class="brand-name">Renato</a>
-    </header>
+    <!-- Menu de Navegação Totalmente Visível e Fixo no Topo -->
+    <nav>
+        <a href="#home">Início</a>
+        <a href="#quem-sou">Quem sou</a>
+        <a href="#perfil-skills">Habilidades</a>
+        <a href="#credenciais">Credenciais</a>
+    </nav>
 
     <!-- Botão de Voltar ao Topo -->
     <a href="#home" class="btn-top"><i class="fas fa-chevron-up"></i></a>
 
     <!-- ==========================================
-         SEÇÃO 1: HERO
+         SEÇÃO 1: HERO (TELA INICIAL PRETA)
          ========================================== -->
     <main class="hero" id="home">
         <div class="welcome-text">Olá, seja bem vindo!</div>
@@ -534,7 +468,6 @@
         <h2 class="section-title">Quem sou</h2>
         
         <div class="about-content">
-            <!-- Caso queira adicionar uma foto sua posteriormente, substitua a URL abaixo -->
             <img src="https://via.placeholder.com/130" alt="Renato Kosseki" class="profile-img">
             <div class="about-text">
                 <p>Sou um amante da computação que busca explorar a capacidade de processamento das máquinas na extração de informações úteis de grandes massas de dados.</p>
@@ -570,7 +503,6 @@
                     <span>Português <span class="tag-badge">Nativo</span></span>
                 </div>
                 
-                <!-- Botões Inferiores -->
                 <div class="action-buttons">
                     <a href="mailto:seu-email@exemplo.com" class="btn-outline">Fale Comigo</a>
                     <a href="#" class="btn-dark">Baixe meu CV</a>
@@ -584,7 +516,6 @@
                     Estes são meus níveis de habilidade com as tecnologias mais populares no mercado atualmente:
                 </p>
 
-                <!-- Skill 1 -->
                 <div class="skill-item">
                     <div class="skill-name-container">
                         <span class="skill-name">HTML5 & CSS3</span>
@@ -595,7 +526,6 @@
                     </div>
                 </div>
 
-                <!-- Skill 2 -->
                 <div class="skill-item">
                     <div class="skill-name-container">
                         <span class="skill-name">JavaScript</span>
@@ -606,7 +536,6 @@
                     </div>
                 </div>
 
-                <!-- Skill 3 -->
                 <div class="skill-item">
                     <div class="skill-name-container">
                         <span class="skill-name">Python (Data Science)</span>
@@ -617,7 +546,6 @@
                     </div>
                 </div>
 
-                <!-- Skill 4 -->
                 <div class="skill-item">
                     <div class="skill-name-container">
                         <span class="skill-name">SQL</span>
@@ -642,10 +570,8 @@
         
         <div class="cred-heading">Experiências</div>
         
-        <!-- Linha do Tempo (Timeline) -->
         <div class="timeline">
             
-            <!-- Item 1 (Esquerda) -->
             <div class="timeline-item left">
                 <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                 <div class="timeline-date">Outubro, 2024 - Atual</div>
@@ -654,7 +580,6 @@
                 <p class="timeline-desc">Atuação no desenvolvimento de aplicações web completas, integrações de APIs e automação de rotinas utilizando linguagens modernas e práticas ágeis.</p>
             </div>
             
-            <!-- Item 2 (Direita) -->
             <div class="timeline-item right">
                 <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                 <div class="timeline-date">Janeiro, 2023 - Outubro, 2024</div>
