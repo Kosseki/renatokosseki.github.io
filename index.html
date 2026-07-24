@@ -26,7 +26,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #0b0b0b; /* Fundo escuro igual ao tema */
+            background-color: #0b0b0b; 
             padding: 18px 0;
             text-align: center;
             z-index: 1000;
@@ -43,7 +43,7 @@
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #ff0055; /* Magenta ao passar o mouse */
+            color: #00d2ff; /* Alterado para Azul Ciano */
         }
 
         /* --- Botão Flutuante de Voltar ao Topo --- */
@@ -51,8 +51,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #ff0055;
-            color: white;
+            background-color: #00d2ff; /* Alterado para Azul Ciano */
+            color: #050505; /* Texto escuro para melhor contraste com o azul claro */
             width: 40px;
             height: 40px;
             border-radius: 4px;
@@ -66,7 +66,7 @@
 
         /* --- Títulos Padrão das Seções --- */
         .section-tag {
-            color: #ff0055;
+            color: #00d2ff; /* Alterado para Azul Ciano */
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 13px;
@@ -103,7 +103,7 @@
             background-size: 150px, 600px;
         }
         .welcome-text {
-            color: #ff0055;
+            color: #00d2ff; /* Alterado para Azul Ciano */
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 14px;
@@ -145,8 +145,8 @@
             gap: 10px;
         }
         .btn-about:hover {
-            border-color: white;
-            background-color: rgba(255,255,255,0.1);
+            border-color: #00d2ff; /* Borda acende em azul no hover */
+            background-color: rgba(0, 210, 255, 0.1);
         }
         .hero-footer-icons {
             position: absolute;
@@ -160,13 +160,15 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-        .hero-footer-icons a:hover { color: #ff0055; }
+        .hero-footer-icons a:hover { 
+            color: #00d2ff; /* Alterado para Azul Ciano */
+        }
 
         /* ==========================================================
            SEÇÃO 2: QUEM SOU (SOBRE)
            ========================================================== */
         .container-section {
-            padding: 110px 20px 90px 20px; /* Aumentado o topo por conta do menu fixo */
+            padding: 110px 20px 90px 20px; 
             max-width: 1000px;
             margin: 0 auto;
             box-sizing: border-box;
@@ -237,8 +239,8 @@
         }
         .tag-badge {
             display: inline-block;
-            background-color: #222222;
-            color: white;
+            background-color: #00d2ff; /* Alterado para Azul Ciano */
+            color: #050505;
             font-size: 11px;
             padding: 3px 8px;
             font-weight: bold;
@@ -311,8 +313,9 @@
             transition: all 0.3s;
         }
         .btn-outline:hover {
-            background-color: #111111;
-            color: white;
+            background-color: #00d2ff; /* Efeito hover com ciano */
+            border-color: #00d2ff;
+            color: #050505;
         }
         .btn-dark {
             flex: 1;
@@ -345,7 +348,7 @@
             font-size: 15px;
         }
         .cred-heading {
-            color: #ff0055;
+            color: #00d2ff; /* Alterado para Azul Ciano */
             font-size: 20px;
             margin-top: 50px;
             margin-bottom: 40px;
@@ -421,7 +424,7 @@
 </head>
 <body>
 
-    <!-- Menu de Navegação Totalmente Visível e Fixo no Topo -->
+    <!-- Menu de Navegação Fixo e Aberto no Topo -->
     <nav>
         <a href="#home">Início</a>
         <a href="#quem-sou">Quem sou</a>
@@ -483,7 +486,7 @@
     <section class="container-section" id="perfil-skills">
         <div class="grid-skills">
             
-            <!-- Perfil Fixo da Referência -->
+            <!-- Perfil Fixo -->
             <div class="profile-info">
                 <h3>Perfil</h3>
                 <p style="color: #666; line-height: 1.6; margin-bottom: 30px;">
